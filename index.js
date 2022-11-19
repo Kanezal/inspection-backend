@@ -1,4 +1,5 @@
 const express = require("express")
+
 const inspector = require("./api/inspector")
 
 const app = express()

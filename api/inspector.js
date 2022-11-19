@@ -33,9 +33,13 @@ router.get('/', (req, res) => {
     }
 })
 
+/**
+ * POST reports
+ * 
+ * @return message json if successful
+ */
 router.post('/', (req, res) => {
     try {
-        console.log(req.body.description)
         var data = JSON.stringify({
             "embeds": [
                 {
@@ -58,9 +62,7 @@ router.post('/', (req, res) => {
 
         axios(config)
             .then(function (response) {
-                console.info(JSON.stringify(response.data))
-
-                console.log(JSON.stringify(response.data));
+                res.json(response.data);
             })
             .catch(function (error) {
                 console.log(error);
